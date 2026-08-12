@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atharv Dixit</title>
+<style>
+  :root {
+    --box-size: 60px;
+    --line-color: rgba(255, 255, 255, 0.06);
+    --bg-color: #0d0e10;
+    --grey-text: #8a8f98;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    background-image:
+      linear-gradient(to right, var(--line-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line-color) 1px, transparent 1px);
+    background-size: var(--box-size) var(--box-size);
+    position: relative;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* subtle vignette so the grid doesn't feel flat */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 45%, transparent 0%, var(--bg-color) 85%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  nav {
+    position: fixed;
+    top: 2%;
+    left: 5%;
+    width: 90%;
+    height: 10%;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  nav .logo {
+    color: #e4e4e7;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+  }
+
+  nav ul li a {
+    color: #b4b8c0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  nav ul li a:hover {
+    color: #ffffff;
+  }
+
+  main {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    color: var(--grey-text);
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-align: center;
+    user-select: none;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      padding: 0 20px;
+    }
+    nav ul {
+      gap: 16px;
+    }
+    nav ul li a {
+      font-size: 0.8rem;
+    }
+    h1 {
+      letter-spacing: 3px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">AD</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>ATHARV DIXIT</h1>
+  </main>
+
+</body>
+</html>
